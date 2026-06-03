@@ -873,6 +873,38 @@ function joinWaitlist(){
     document.getElementById('waitlistSuccess').style.display='block';
   }
 }
+
+// AUTO-ADVANCE TO STEP 3 WHEN RETURNING FROM SQUARE PAYMENT
+window.addEventListener('DOMContentLoaded', function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+
+    // Scroll to booking section
+    setTimeout(function() {
+      var bookingSection = document.getElementById('booking');
+      if (bookingSection) bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 400);
+
+    // Show confirmed payment banner
+    var banner = document.createElement('div');
+    banner.id = 'paid-banner';
+    banner.innerHTML = '✦ &nbsp;Your reservation fee has been received. Please complete your scheduling below.';
+    banner.style.cssText = 'background:rgba(255,255,255,0.06);border:.5px solid rgba(255,255,255,0.2);color:#fff;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:.95rem;text-align:center;padding:1rem 1.5rem;margin-bottom:2rem;letter-spacing:.04em;line-height:1.7;';
+
+    // Insert banner above the steps
+    var stepsEl = document.getElementById('bk-steps');
+    if (stepsEl) stepsEl.parentNode.insertBefore(banner, stepsEl);
+
+    // Hide steps indicator and jump straight to step 3
+    document.getElementById('bk-steps').style.display = 'none';
+    document.getElementById('bk-step1').style.display = 'none';
+    document.getElementById('bk-step2').style.display = 'none';
+    document.getElementById('bk-step3').style.display = 'flex';
+
+    // Clean the URL so refreshing doesn't re-trigger
+    window.history.replaceState({}, document.title, window.location.pathname + '#booking');
+  }
+});
 </script>
 
 <!-- FOOTER -->
