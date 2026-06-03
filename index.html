@@ -528,9 +528,12 @@ footer{background:var(--bg);border-top:.5px solid var(--border);padding:3.5rem 3
             <span style="font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);">Email</span>
             <a href="mailto:bibisglambar@gmail.com" style="font-size:.78rem;color:#fff;text-decoration:none;">bibisglambar@gmail.com</a>
           </div>
-          <div style="padding:1.1rem 1.4rem;border-bottom:.5px solid var(--border);display:flex;justify-content:space-between;">
-            <span style="font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);">Hours</span>
-            <span style="font-size:.78rem;color:#fff;">Mon–Sat, 9am–7pm</span>
+          <div style="padding:1.1rem 1.4rem;border-bottom:.5px solid var(--border);display:flex;justify-content:space-between;gap:1rem;">
+            <span style="font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);flex-shrink:0;">Hours</span>
+            <div style="text-align:right;">
+              <span style="font-size:.78rem;color:#fff;display:block;">Thu – Sat, 9am – 7pm</span>
+              <span style="font-size:.62rem;color:var(--dim);font-style:italic;font-family:'Cormorant Garamond',serif;line-height:1.6;display:block;margin-top:.2rem;">Appointments outside these hours are available upon request and subject to an after-hours booking fee.</span>
+            </div>
           </div>
           <div style="padding:1.1rem 1.4rem;display:flex;justify-content:space-between;">
             <span style="font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);">Location</span>
@@ -656,62 +659,60 @@ footer{background:var(--bg);border-top:.5px solid var(--border);padding:3.5rem 3
           </div>
         </div>
 
-        <!-- STEP 3 -->
-        <div id="bk-step3" class="bk-panel" style="display:none;flex-direction:column;gap:1.2rem;">
-          <div class="form-row">
-            <div class="form-group"><label>Preferred Date</label><input id="bk-date" type="date" required/></div>
-            <div class="form-group">
-              <label>Preferred Time</label>
-              <select id="bk-time">
-                <option value="" disabled selected>Select time</option>
-                <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
-                <option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option>
-                <option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label>Alternate Date <span style="color:var(--dim);font-size:.65em;">(optional)</span></label><input id="bk-altdate" type="date"/></div>
-            <div class="form-group">
-              <label>In-Studio or On Location?</label>
-              <select id="bk-location">
-                <option value="" disabled selected>Select</option>
-                <option>In-Studio — Atlanta, GA</option>
-                <option>On Location — Travel fee applies</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>How did you hear about us?</label>
-            <select id="bk-referral">
-              <option value="" disabled selected>Select</option>
-              <option>Instagram</option><option>TikTok</option><option>Google Search</option>
-              <option>Word of Mouth / Referral</option><option>Facebook</option><option>Other</option>
-            </select>
-          </div>
+        <!-- STEP 3 — Square Appointments -->
+        <div id="bk-step3" class="bk-panel" style="display:none;flex-direction:column;gap:1.5rem;">
 
-          <!-- Summary -->
-          <div id="bk-summary" style="border:.5px solid var(--border);padding:1.5rem;background:rgba(255,255,255,.02);">
-            <p style="font-size:.52rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;">Booking Summary</p>
-            <div style="display:flex;flex-direction:column;gap:.55rem;">
-              <div style="display:flex;justify-content:space-between;gap:1rem;"><span style="font-size:.7rem;color:var(--dim);white-space:nowrap;">Name</span><span id="bk-sum-name" style="font-size:.7rem;color:#fff;text-align:right;">—</span></div>
-              <div style="display:flex;justify-content:space-between;gap:1rem;"><span style="font-size:.7rem;color:var(--dim);white-space:nowrap;">Service</span><span id="bk-sum-svc" style="font-size:.7rem;color:#fff;text-align:right;max-width:70%;">—</span></div>
-              <div style="display:flex;justify-content:space-between;gap:1rem;"><span style="font-size:.7rem;color:var(--dim);white-space:nowrap;">Occasion</span><span id="bk-sum-occ" style="font-size:.7rem;color:#fff;text-align:right;">—</span></div>
+          <!-- Booking Policy -->
+          <div style="border:.5px solid var(--border);background:rgba(255,255,255,.02);padding:1.6rem;">
+            <p style="font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;">✦ &nbsp;Bibisglambar Booking Policy</p>
+            <div style="display:flex;flex-direction:column;gap:.9rem;">
+              <div>
+                <p style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.3rem;">Reservation Fee</p>
+                <p style="font-size:.75rem;color:var(--dim);line-height:1.75;">Your reservation fee is non-refundable and is applied toward your service total. It confirms your spot on the Bibisglambar calendar.</p>
+              </div>
+              <div>
+                <p style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.3rem;">Cancellations & Rescheduling</p>
+                <p style="font-size:.75rem;color:var(--dim);line-height:1.75;">A minimum of 48 hours notice is required. Cancellations within 48 hours forfeit the reservation fee. Rescheduling within 48 hours is subject to availability and a new reservation fee may be required.</p>
+              </div>
+              <div>
+                <p style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.3rem;">Late Arrivals</p>
+                <p style="font-size:.75rem;color:var(--dim);line-height:1.75;">Arrivals more than 15 minutes late may result in a shortened service or cancellation. The reservation fee will not be refunded for late arrivals that result in cancellation.</p>
+              </div>
+              <div>
+                <p style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.3rem;">No-Shows</p>
+                <p style="font-size:.75rem;color:var(--dim);line-height:1.75;">No-call, no-show appointments will be charged the full service amount and will require full payment upfront for any future bookings.</p>
+              </div>
+              <div>
+                <p style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.3rem;">Business Hours & After-Hours Bookings</p>
+                <p style="font-size:.75rem;color:var(--dim);line-height:1.75;">Bibisglambar operates Thursday through Saturday, 9am – 7pm. Appointments requested outside of these hours are available upon request and subject to an after-hours booking fee. Please contact us directly to arrange.</p>
+              </div>
+              <div>
+                <p style="font-size:.75rem;color:var(--dim);line-height:1.75;">For bridal parties, group bookings, and special events, please contact us directly for a custom quote. A larger deposit may be required to secure group bookings.</p>
+              </div>
+              <div>
+                <p style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.3rem;">Confirmations & Reminders</p>
+                <p style="font-size:.75rem;color:var(--dim);line-height:1.75;">You will receive a booking confirmation via email or text after your appointment is secured. Reminder notifications will be sent 48 hours and 24 hours before your appointment.</p>
+              </div>
             </div>
           </div>
 
-          <div style="display:flex;gap:.8rem;margin-top:.4rem;">
-            <button type="button" class="btn-o" onclick="bkGo(2)" style="cursor:pointer;font-family:var(--fb);flex:1;">← Back</button>
-            <button type="button" class="btn-w" onclick="bkSubmit()" id="bk-submit-btn" style="cursor:pointer;font-family:var(--fb);flex:2;">✦ &nbsp;Request Appointment</button>
+          <!-- Square Appointments Embed -->
+          <div style="border:.5px solid var(--border);padding:1.5rem;background:rgba(255,255,255,.02);">
+            <p style="font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;">✦ &nbsp;Select Your Date & Time</p>
+            <script src='https://square.site/appointments/buyer/widget/4cf8jac0tagdm5/LWJZJPD0NZZ0W.js'></script>
+          </div>
+
+          <div style="padding:.5rem 0;">
+            <button type="button" class="btn-o" onclick="bkGo(2)" style="cursor:pointer;font-family:var(--fb);width:100%;">← Back to Services</button>
           </div>
         </div>
 
-        <!-- Success -->
+        <!-- Inquiry Success — for special events / bridal / general questions -->
         <div id="bk-success" style="display:none;text-align:center;padding:5rem 2rem;border:.5px solid var(--border);">
           <div style="font-size:1.6rem;margin-bottom:1.4rem;color:#fff;">✦</div>
-          <p style="font-family:var(--fd);font-size:1.5rem;font-weight:300;font-style:italic;color:#fff;margin-bottom:.8rem;">Your request has been received.</p>
-          <p style="font-size:.75rem;color:var(--muted);line-height:1.9;max-width:380px;margin:0 auto;">We'll be in touch within 24 hours to confirm your appointment and send your Square deposit link.</p>
-          <div style="margin-top:2rem;display:flex;justify-content:center;gap:1.5rem;">
+          <p style="font-family:var(--fd);font-size:1.5rem;font-weight:300;font-style:italic;color:#fff;margin-bottom:.8rem;">Your enquiry has been received.</p>
+          <p style="font-size:.75rem;color:var(--muted);line-height:1.9;max-width:400px;margin:0 auto;">Thank you for reaching out to Bibisglambar. A member of our team will be in touch within 24 hours to discuss your request, provide a custom quote, and guide you through the next steps.</p>
+          <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:.5px solid var(--border);display:flex;justify-content:center;gap:1.5rem;">
             <a href="tel:6787241940" style="font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-decoration:none;">(678) 724-1940</a>
             <span style="color:var(--dim);">·</span>
             <a href="mailto:bibisglambar@gmail.com" style="font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-decoration:none;">bibisglambar@gmail.com</a>
@@ -888,8 +889,8 @@ window.addEventListener('DOMContentLoaded', function() {
     // Show confirmed payment banner
     var banner = document.createElement('div');
     banner.id = 'paid-banner';
-    banner.innerHTML = '✦ &nbsp;Your reservation fee has been received. Please complete your scheduling below.';
-    banner.style.cssText = 'background:rgba(255,255,255,0.06);border:.5px solid rgba(255,255,255,0.2);color:#fff;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:.95rem;text-align:center;padding:1rem 1.5rem;margin-bottom:2rem;letter-spacing:.04em;line-height:1.7;';
+    banner.innerHTML = '✦ &nbsp;Thank you — your reservation fee has been received. You are one step away from your Bibisglambar experience. Please select your appointment date and time below.';
+    banner.style.cssText = 'background:rgba(255,255,255,0.06);border:.5px solid rgba(255,255,255,0.2);color:#fff;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:.95rem;text-align:center;padding:1.4rem 1.8rem;margin-bottom:2rem;letter-spacing:.04em;line-height:1.85;';
 
     // Insert banner above the steps
     var stepsEl = document.getElementById('bk-steps');
