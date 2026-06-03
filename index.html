@@ -808,6 +808,8 @@ function bkCheckFee() {
   continueBtn.style.opacity = checked ? '1' : '0.3';
   continueBtn.style.pointerEvents = checked ? 'auto' : 'none';
 }
+
+function bkGo(step) {
   if (step === 2) {
     if (!document.getElementById('bk-fname').value || !document.getElementById('bk-email').value || !document.getElementById('bk-phone').value) {
       alert('Please fill in your name, email and phone number.');
@@ -826,12 +828,6 @@ function bkCheckFee() {
     var s = parseInt(el.getAttribute('data-s'));
     el.classList.toggle('active', s===step);
   });
-}
-
-function bkPickSvc(el) {
-  document.querySelectorAll('.bk-svc-card').forEach(function(c){ c.classList.remove('selected'); });
-  el.classList.add('selected');
-  bkService = el.getAttribute('data-val');
 }
 
 function bkSubmit() {
