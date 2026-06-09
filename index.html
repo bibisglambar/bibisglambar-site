@@ -10,17 +10,17 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#000;--bg2:#080808;--bg3:#111;
-  --white:#fff;--muted:rgba(255,255,255,0.55);
-  --dim:rgba(255,255,255,0.25);--faint:rgba(255,255,255,0.08);
-  --border:rgba(255,255,255,0.1);--border2:rgba(255,255,255,0.22);
+  --bg:#1a1a1a;--bg2:#212121;--bg3:#2a2a2a;
+  --white:#fff;--muted:rgba(255,255,255,0.7);
+  --dim:rgba(255,255,255,0.4);--faint:rgba(255,255,255,0.1);
+  --border:rgba(255,255,255,0.15);--border2:rgba(255,255,255,0.3);
   --fd:'Cormorant Garamond',serif;--fp:'Playfair Display',serif;--fb:'Jost',sans-serif;
 }
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--white);font-family:var(--fb);font-weight:300;line-height:1.7;overflow-x:hidden;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.8rem 3rem;background:rgba(0,0,0,0.93);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);height:70px;overflow:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.8rem 3rem;background:rgba(26,26,26,0.96);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);height:70px;overflow:hidden;}
 .nav-logo img{height:100px;width:auto;display:block;}
 .nav-links{display:flex;gap:1.6rem;list-style:none;}
 .nav-links a{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .3s;}
@@ -257,14 +257,8 @@ footer{background:var(--bg);border-top:.5px solid var(--border);padding:3.5rem 3
 
     <!-- RIGHT: Photo -->
     <div style="position:relative;overflow:hidden;min-height:600px;">
-      <!-- SIGNATURE PHOTO: replace src with your Cloudinary URL or drop signature-bg.jpg in images/ folder -->
-      <img src="images/signature-bg.jpg" alt="Bibisglambar Timeless Glam" 
-           style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" 
-           onerror="this.style.cssText='width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#111;'"/>
-      <!-- Placeholder shown when no photo -->
-      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0a0a0a;z-index:-1;">
-        <span style="font-size:.55rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.2);">Add Your Photo Here</span>
-      </div>
+      <img src="https://res.cloudinary.com/dyjr1vtmv/image/upload/v1781039249/signature_photo_optimized_snxolp.jpg" alt="Bibisglambar Timeless Glam" 
+           style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"/>
     </div>
 
   </div>
@@ -359,10 +353,98 @@ footer{background:var(--bg);border-top:.5px solid var(--border);padding:3.5rem 3
       </div>
     </div>
 
+    <!-- BRIDAL DIVIDER -->
+    <div style="padding:2.5rem 2rem;border-top:.5px solid var(--border);border-bottom:.5px solid var(--border);background:rgba(255,255,255,0.02);display:flex;align-items:center;gap:1.5rem;">
+      <div style="height:.5px;flex:1;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <span style="font-size:.52rem;letter-spacing:.42em;text-transform:uppercase;color:var(--muted);">Bridal Collection</span>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,.5);margin-top:.4rem;line-height:1.7;">For the bride, her party, and every unforgettable moment in between.</p>
+      </div>
+      <div style="height:.5px;flex:1;background:var(--border);"></div>
+    </div>
+
+    <!-- 05 Bridal Glam — Makeup & Hair -->
+    <div class="svc-row">
+      <div class="svc-left">
+        <div class="svc-num">05</div>
+        <h3 class="svc-name">Bridal Glam</h3>
+        <span class="svc-tag">Makeup & Hair</span>
+      </div>
+      <div class="svc-right">
+        <p class="svc-desc">Your wedding day deserves nothing less than perfection. Our Bridal Glam service combines flawless makeup artistry with expert hairstyling in one seamless experience — designed for a cohesive, stress-free timeline so you can arrive at the altar feeling calm, beautiful, and completely yourself.</p>
+        <ul class="svc-includes">
+          <li>Full bridal makeup application</li>
+          <li>Bridal hairstyling — updo, waves, or silk press</li>
+          <li>Long-wear & photography-ready finish</li>
+          <li>Lash application included</li>
+          <li>Bridal consultation & trial available</li>
+          <li>On-location available</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 06 Bridal Party Glam -->
+    <div class="svc-row">
+      <div class="svc-left">
+        <div class="svc-num">06</div>
+        <h3 class="svc-name">Bridal Party Glam</h3>
+        <span class="svc-tag">Group Makeup & Hair</span>
+      </div>
+      <div class="svc-right">
+        <p class="svc-desc">Your girls deserve to glow just as much as you do. Bibisglambar offers full makeup and hair services for the entire bridal party — each look individually tailored while keeping the overall aesthetic cohesive and complementary to the bride's vision.</p>
+        <ul class="svc-includes">
+          <li>Individual makeup for each bridesmaid</li>
+          <li>Hair styling for bridal party</li>
+          <li>Cohesive aesthetic across the group</li>
+          <li>Lash application available</li>
+          <li>Custom quote based on party size</li>
+          <li>On-location & in-studio available</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 07 Traditional Glam -->
+    <div class="svc-row">
+      <div class="svc-left">
+        <div class="svc-num">07</div>
+        <h3 class="svc-name">Traditional Glam</h3>
+        <span class="svc-tag">Bride & Bridal Party</span>
+      </div>
+      <div class="svc-right">
+        <p class="svc-desc">Honoring culture through beauty. Our Traditional Glam service is tailored for brides and bridal parties celebrating traditional ceremonies — delivering rich, vibrant looks that pay homage to heritage while maintaining the Bibisglambar standard of elegance and artistry.</p>
+        <ul class="svc-includes">
+          <li>Culturally inspired makeup looks</li>
+          <li>Traditional hairstyling & accessories</li>
+          <li>Bold, long-wear colour application</li>
+          <li>Available for bride & full bridal party</li>
+          <li>Consultation to honour your cultural vision</li>
+          <li>On-location & in-studio available</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 08 Scheduled Bridal Party Timeline -->
+    <div class="svc-row">
+      <div class="svc-left">
+        <div class="svc-num">08</div>
+        <h3 class="svc-name">Scheduled Bridal Timeline</h3>
+        <span class="svc-tag">Complimentary Add-On</span>
+      </div>
+      <div class="svc-right">
+        <p class="svc-desc">Included at no additional cost with any Bibisglambar bridal service. This add-on takes the chaos out of your wedding morning — organizing every appointment from start to finish so the entire bridal party is camera-ready, on time, and completely at ease. A more relaxed morning means a more present, joyful bride.</p>
+        <ul class="svc-includes">
+          <li>Complimentary with any bridal service — no extra charge</li>
+          <li>Personalized getting-ready schedule</li>
+          <li>Sequenced appointments for the full party</li>
+          <li>Built-in buffer time for a relaxed experience</li>
+          <li>Coordination with venue & photographer timing</li>
+          <li>Lead artist on-site throughout</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
-
-<!-- SASY COUTURE -->
 <section id="sasy" style="position:relative;overflow:hidden;">
   <!-- COUTURE PARTNER PHOTO: replace src with your Cloudinary URL or drop sasy-bg.jpg in images/ folder -->
   <div style="position:absolute;inset:0;z-index:0;">
