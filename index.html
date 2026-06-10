@@ -413,9 +413,9 @@ window.addEventListener('DOMContentLoaded', function() {
     <li class="nav-more">
       <a href="#" onclick="toggleMore(event)">More &#9662;</a>
       <ul class="nav-more-menu" id="nav-more-menu">
-        <li><a href="#" onclick="showPage('masterclass');toggleMore2();return false;">Masterclass</a></li>
-        <li><a href="#" onclick="showPage('membership');toggleMore2();return false;">Membership</a></li>
-        <li><a href="#" onclick="showPage('sasy');toggleMore2();return false;">Sasy Couture</a></li>
+        <li><a href="#" onclick="showPage('launching');return false;">Launching Soon</a></li>
+<li><a href="#" onclick="showPage('sasy');toggleMore2();return false;">Sasy Couture</a></li>
+        <li><a href="#" onclick="showPage('blog');toggleMore2();return false;">Blog</a></li>
         <li><a href="#" onclick="showPage('contact');toggleMore2();return false;">Contact</a></li>
       </ul>
     </li>
@@ -432,9 +432,10 @@ window.addEventListener('DOMContentLoaded', function() {
   <a href="#" onclick="showPage('home');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Home</a>
   <a href="#" onclick="showPage('services');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Services</a>
   <a href="#" onclick="showPage('portfolio');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Portfolio</a>
-  <a href="#" onclick="showPage('masterclass');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Masterclass</a>
-  <a href="#" onclick="showPage('membership');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Membership</a>
+  <a href="#" onclick="showPage('launching');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Launching Soon</a>
+  <a href="#" onclick="showPage('launching');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Launching Soon</a>
   <a href="#" onclick="showPage('sasy');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Sasy Couture</a>
+  <a href="#" onclick="showPage('blog');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Blog</a>
   <a href="#" onclick="showPage('contact');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Contact</a>
   <a href="#" onclick="showPage('booking');toggleMobile();return false;" style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:#000;background:#fff;padding:.9rem 2.5rem;text-decoration:none;margin-top:.5rem;">Book Now</a>
 </div>
@@ -488,19 +489,13 @@ window.addEventListener('DOMContentLoaded', function() {
       <h2 class="sec-title" style="text-align:center;">Before <em>&amp; After</em></h2>
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--muted);margin-top:1rem;line-height:1.8;">Every client walks in beautiful. She leaves unforgettable.</p>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);">
-      <div style="background:var(--bg);padding:3rem 2rem;text-align:center;">
-        <p style="font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--dim);margin-bottom:2rem;">Before</p>
-        <div style="width:100%;aspect-ratio:3/4;background:var(--bg2);border:.5px solid var(--border);display:flex;align-items:center;justify-content:center;">
-          <p style="font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.15);">Photo Coming Soon</p>
-        </div>
-      </div>
-      <div style="background:var(--bg);padding:3rem 2rem;text-align:center;">
-        <p style="font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--dim);margin-bottom:2rem;">After</p>
-        <div style="width:100%;aspect-ratio:3/4;background:var(--bg2);border:.5px solid var(--border);display:flex;align-items:center;justify-content:center;">
-          <p style="font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.15);">Photo Coming Soon</p>
-        </div>
-      </div>
+
+    <!-- BEFORE & AFTER VIDEO -->
+    <div style="width:100%;max-width:760px;margin:0 auto;">
+      <video autoplay muted loop playsinline controls style="width:100%;display:block;border:.5px solid var(--border);">
+        <source src="https://res.cloudinary.com/dyjr1vtmv/video/upload/v1781129172/IMG_4100_bibisglambar_before_and_after_y62lrs.mov" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
     </div>
     <p style="text-align:center;font-size:.65rem;color:var(--dim);margin-top:1.5rem;letter-spacing:.08em;">Real client. No filters. Just Bibisglambar.</p>
   </div>
@@ -1137,80 +1132,70 @@ window.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 </div>
-<div id="page-masterclass" class="page">
-<!-- MASTERCLASS -->
-<section id="masterclass">
-  <div class="masterclass-inner">
-    <div class="sec-header">
-      <span class="eyebrow">Education</span>
-      <h2 class="sec-title">Timeless Glam<br><em>Masterclass</em></h2>
+<div id="page-launching" class="page">
+<section style="padding:7rem 3rem;background:var(--bg);border-bottom:.5px solid var(--border);">
+  <div style="max-width:860px;margin:0 auto;">
+
+    <div class="sec-header" style="margin-bottom:5rem;text-align:center;">
+      <span class="eyebrow">What's Next</span>
+      <h2 class="sec-title" style="text-align:center;">Launching <em>Soon</em></h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--muted);margin-top:1rem;line-height:1.8;">Two exciting launches are on the way. Be the first to know.</p>
     </div>
-    <div class="mc-grid">
-      <div class="mc-card">
-        <div class="mc-icon">✦ &nbsp;What You'll Learn</div>
-        <h4 class="mc-card-title">The Timeless Soft Glam</h4>
-        <p class="mc-card-body">Master Bibisglambar's signature look from start to finish. Learn skin prep, foundation application, sculpting, soft eye artistry, and the finishing techniques that make this look iconic.</p>
-      </div>
-      <div class="mc-card">
-        <div class="mc-icon">✦ &nbsp;Who It's For</div>
-        <h4 class="mc-card-title">All Skill Levels Welcome</h4>
-        <p class="mc-card-body">Whether you're a beginner wanting to elevate your personal makeup routine or a professional expanding your technique, this masterclass meets you where you are and takes you further.</p>
-      </div>
-      <div class="mc-card">
-        <div class="mc-icon">✦ &nbsp;What's Included</div>
-        <h4 class="mc-card-title">A Full Experience</h4>
-        <p class="mc-card-body">Live demonstration, hands-on practice, product recommendations, personalised feedback, and a digital lookbook to take home. Small group sizes ensure every attendee gets direct attention.</p>
-      </div>
-      <div class="mc-card">
-        <div class="mc-icon">✦ &nbsp;Format</div>
-        <h4 class="mc-card-title">In-Person & Private</h4>
-        <p class="mc-card-body">Available as a group masterclass or private one-on-one session. Corporate and bridal party bookings are also available. Contact us to discuss custom workshop arrangements.</p>
+
+    <!-- LASH PRODUCT -->
+    <div style="border:.5px solid var(--border);margin-bottom:1px;background:rgba(255,255,255,.02);padding:3.5rem 3rem;">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:3rem;flex-wrap:wrap;">
+        <div style="flex:1;min-width:280px;">
+          <span style="font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:1rem;">✦ &nbsp;Product Launch</span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#fff;line-height:1.2;margin-bottom:1rem;">Signature Minimal<br><em style="font-style:italic;">Wispy Eyelash</em></h3>
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.95;margin-bottom:1.5rem;">Designed to complement every skin tone and eye shape — effortless, elevated, and unmistakably Bibisglambar. Our first product is almost here.</p>
+          <p style="font-size:.75rem;color:var(--dim);line-height:1.85;margin-bottom:2rem;">Join the preorder waitlist for exclusive early access and a special launch offer.</p>
+          <form name="lash-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="lash-waitlist-form" onsubmit="handleLashWaitlist(event)" style="display:flex;flex-direction:column;gap:.8rem;max-width:400px;">
+            <input type="hidden" name="form-name" value="lash-waitlist"/>
+            <p style="display:none;"><input name="bot-field"/></p>
+            <input type="text" name="name" placeholder="Your name" required style="background:var(--bg2);border:.5px solid var(--border);color:#fff;padding:.9rem 1.2rem;font-family:var(--fb);font-size:.78rem;outline:none;"/>
+            <input type="email" name="email" placeholder="Your email address" required style="background:var(--bg2);border:.5px solid var(--border);color:#fff;padding:.9rem 1.2rem;font-family:var(--fb);font-size:.78rem;outline:none;"/>
+            <button type="submit" class="btn-w" style="cursor:pointer;font-family:var(--fb);">I Want My Pair ✦</button>
+          </form>
+          <div id="lash-waitlist-success" style="display:none;padding:1.5rem 0;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:#fff;">You're on the list.</p>
+            <p style="font-size:.72rem;color:var(--muted);margin-top:.5rem;line-height:1.8;">We'll be in touch the moment the Signature Wispy Lash drops.</p>
+          </div>
+        </div>
+        <div style="flex:0 0 200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;border:.5px solid var(--border);background:var(--bg2);text-align:center;">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--muted);">Product image<br>coming soon</p>
+        </div>
       </div>
     </div>
-    <div class="mc-cta">
-      <h3 class="mc-cta-title">Ready to learn the art of Timeless Soft Glam?</h3>
-      <p class="mc-cta-sub">Spaces are limited. Book your seat today.</p>
-      <a class="btn-w" href="#booking">Reserve Your Spot</a>
+
+    <!-- MASTERCLASS -->
+    <div style="border:.5px solid var(--border);border-top:none;background:rgba(255,255,255,.02);padding:3.5rem 3rem;">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:3rem;flex-wrap:wrap;">
+        <div style="flex:1;min-width:280px;">
+          <span style="font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:1rem;">✦ &nbsp;Education Launch</span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#fff;line-height:1.2;margin-bottom:1rem;">Timeless Glam<br><em style="font-style:italic;">Masterclass</em></h3>
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.95;margin-bottom:1.5rem;">Master Bibisglambar's signature Timeless Soft Glam from start to finish. Whether you're a beginner or a professional, this masterclass meets you where you are and takes you further.</p>
+          <p style="font-size:.75rem;color:var(--dim);line-height:1.85;margin-bottom:2rem;">Offered at a flat rate upon launch. Reserve your spot now and we'll be in touch with all the details.</p>
+          <form name="masterclass-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="mc-waitlist-form" onsubmit="handleMcWaitlist(event)" style="display:flex;flex-direction:column;gap:.8rem;max-width:400px;">
+            <input type="hidden" name="form-name" value="masterclass-waitlist"/>
+            <p style="display:none;"><input name="bot-field"/></p>
+            <input type="text" name="name" placeholder="Your name" required style="background:var(--bg2);border:.5px solid var(--border);color:#fff;padding:.9rem 1.2rem;font-family:var(--fb);font-size:.78rem;outline:none;"/>
+            <input type="email" name="email" placeholder="Your email address" required style="background:var(--bg2);border:.5px solid var(--border);color:#fff;padding:.9rem 1.2rem;font-family:var(--fb);font-size:.78rem;outline:none;"/>
+            <button type="submit" class="btn-w" style="cursor:pointer;font-family:var(--fb);">Reserve My Spot ✦</button>
+          </form>
+          <div id="mc-waitlist-success" style="display:none;padding:1.5rem 0;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:#fff;">You're reserved.</p>
+            <p style="font-size:.72rem;color:var(--muted);margin-top:.5rem;line-height:1.8;">We'll reach out with full masterclass details closer to launch.</p>
+          </div>
+        </div>
+        <div style="flex:0 0 200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;border:.5px solid var(--border);background:var(--bg2);text-align:center;">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--muted);">Date &amp; details<br>coming soon</p>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
-
-
-</div>
-<div id="page-membership" class="page">
-<!-- MEMBERSHIP -->
-<section id="membership">
-  <div class="mem-inner">
-    <div class="mem-badge">Coming Soon</div>
-    <h2 class="mem-title">Bibisglambar<br><em>Beauty Membership</em></h2>
-    <p class="mem-body">An exclusive membership designed for the woman who refuses to compromise on how she shows up — every single month. Priority booking, members-only rates, and curated beauty experiences, all in one.</p>
-    <div class="mem-perks">
-      <div class="perk">
-        <div class="perk-title">Priority Access</div>
-        <p class="perk-body">First access to appointments, new services & exclusive events</p>
-      </div>
-      <div class="perk">
-        <div class="perk-title">Members Rates</div>
-        <p class="perk-body">Exclusive discounted pricing on all Bibisglambar services</p>
-      </div>
-      <div class="perk">
-        <div class="perk-title">Curated Perks</div>
-        <p class="perk-body">Birthday glamour, masterclass access & Sasy Couture benefits</p>
-      </div>
-    </div>
-    <p style="font-size:.7rem;color:var(--dim);margin-bottom:1.2rem;letter-spacing:.08em;">Join the waitlist — be the first to know when we launch.</p>
-    <div class="waitlist-form">
-      <input type="email" id="waitlistEmail" placeholder="Your email address"/>
-      <button onclick="joinWaitlist()">Join Waitlist</button>
-    </div>
-    <div class="waitlist-success" id="waitlistSuccess">
-      <p>✦ &nbsp;You're on the list. We'll be in touch soon.</p>
-    </div>
-  </div>
-</section>
-
-
-
 </div>
 <div id="page-booking" class="page">
 <!-- BOOKING -->
@@ -1364,6 +1349,57 @@ window.addEventListener('DOMContentLoaded', function() {
 
 </div>
 
+<!-- BLOG PAGE -->
+<div id="page-blog" class="page">
+<section style="padding:7rem 3rem;background:var(--bg);min-height:80vh;">
+  <div style="max-width:860px;margin:0 auto;">
+    <div class="sec-header" style="margin-bottom:5rem;">
+      <span class="eyebrow">Editorial</span>
+      <h2 class="sec-title">The Bibisglambar <em>Journal</em></h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--muted);margin-top:1rem;line-height:1.8;max-width:540px;">Beauty tips, behind the scenes, and the stories behind every look. Written by Bibi, for every woman who deserves to feel her best.</p>
+    </div>
+
+    <!-- Featured post placeholder -->
+    <div style="border:.5px solid var(--border);margin-bottom:1px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+        <div style="background:var(--bg2);min-height:320px;display:flex;align-items:center;justify-content:center;border-right:.5px solid var(--border);">
+          <p style="font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.15);">Featured Post Image</p>
+        </div>
+        <div style="padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center;gap:1.2rem;">
+          <span style="font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);">Beauty Tips</span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:#fff;line-height:1.25;">How to Prepare for Your Glam Appointment</h3>
+          <p style="font-size:.78rem;color:var(--dim);line-height:1.85;">Everything you need to know before you sit in the chair — from skincare prep to inspiration photos. Get the most out of your Bibisglambar experience.</p>
+          <a href="https://bibisglambar.hashnode.dev" target="_blank" rel="noopener" style="font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:#fff;text-decoration:none;border-bottom:.5px solid rgba(255,255,255,.3);padding-bottom:.3rem;align-self:flex-start;">Read on the Journal ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second post placeholder -->
+    <div style="border:.5px solid var(--border);border-top:none;margin-bottom:1px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+        <div style="padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center;gap:1.2rem;border-right:.5px solid var(--border);">
+          <span style="font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);">Behind the Scenes</span>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:#fff;line-height:1.25;">What to Expect at Bibisglambar</h3>
+          <p style="font-size:.78rem;color:var(--dim);line-height:1.85;">From the moment you walk in to the moment you leave — a look at the Bibisglambar experience and why every detail matters.</p>
+          <a href="https://bibisglambar.hashnode.dev" target="_blank" rel="noopener" style="font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:#fff;text-decoration:none;border-bottom:.5px solid rgba(255,255,255,.3);padding-bottom:.3rem;align-self:flex-start;">Read on the Journal ↗</a>
+        </div>
+        <div style="background:var(--bg2);min-height:280px;display:flex;align-items:center;justify-content:center;">
+          <p style="font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.15);">Post Image</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA to full blog -->
+    <div style="margin-top:4rem;text-align:center;padding:3.5rem 2rem;border:.5px solid var(--border);background:rgba(255,255,255,.02);">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:#fff;margin-bottom:.8rem;">More stories on the Bibisglambar Journal</p>
+      <p style="font-size:.75rem;color:var(--muted);margin-bottom:2rem;line-height:1.8;">Tips, trends, tutorials and the beauty philosophy behind every look.</p>
+      <a href="https://bibisglambar.hashnode.dev" target="_blank" rel="noopener" class="btn-w" style="text-decoration:none;display:inline-block;">Visit the Journal ↗</a>
+    </div>
+
+  </div>
+</section>
+</div>
+
 <!-- CONTACT PAGE -->
 <div id="page-contact" class="page">
 <section style="padding:7rem 3rem;background:var(--bg);min-height:80vh;">
@@ -1440,13 +1476,14 @@ window.addEventListener('DOMContentLoaded', function() {
     <li><a href="#" onclick="showPage('home');return false;">Home</a></li>
     <li><a href="#" onclick="showPage('services');return false;">Services</a></li>
     <li><a href="#" onclick="showPage('portfolio');return false;">Portfolio</a></li>
-    <li><a href="#" onclick="showPage('masterclass');return false;">Masterclass</a></li>
-    <li><a href="#" onclick="showPage('membership');return false;">Membership</a></li>
+    <li><a href="#" onclick="showPage('masterclass');return false;">Launching Soon</a></li>
+    <li><a href="#" onclick="showPage('membership');return false;">Launching Soon</a></li>
     <li><a href="#" onclick="showPage('sasy');return false;">Sasy Couture</a></li>
+    <li><a href="#" onclick="showPage('blog');return false;">Blog</a></li>
     <li><a href="#" onclick="showPage('contact');return false;">Contact</a></li>
     <li><a href="#" onclick="showPage('booking');return false;">Book Now</a></li>
   </ul>
-  <p class="footer-copy">© 2025 Bibisglambar · Luxury Beauty Bar · www.bibisglambar.com · (678) 724-1940</p>
+  <p class="footer-copy">© 2026 Bibisglambar · Luxury Beauty Bar · www.bibisglambar.com · (678) 724-1940</p>
 </footer>
 
 
@@ -1503,6 +1540,38 @@ window.onload = function() {
   var home = document.getElementById('page-home');
   if (home) home.style.display = 'block';
 };
+
+function handleMcWaitlist(e) {
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  fetch("/", {
+    method: "POST",
+    headers: {"Content-Type": "application/x-www-form-urlencoded"},
+    body: new URLSearchParams(data).toString()
+  }).then(function() {
+    document.getElementById("mc-waitlist-form").style.display = "none";
+    document.getElementById("mc-waitlist-success").style.display = "block";
+  }).catch(function() {
+    alert("Something went wrong. Please try again.");
+  });
+}
+
+function handleLashWaitlist(e) {
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  }).then(function() {
+    document.getElementById('lash-waitlist-form').style.display = 'none';
+    document.getElementById('lash-waitlist-success').style.display = 'block';
+  }).catch(function() {
+    alert('Something went wrong. Please try again.');
+  });
+}
 
 function handleContactSubmit(e) {
   e.preventDefault();
