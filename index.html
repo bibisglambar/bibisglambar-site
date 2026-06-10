@@ -20,12 +20,12 @@ html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--white);font-family:var(--fb);font-weight:300;line-height:1.7;overflow-x:hidden;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.8rem 3rem;background:rgba(26,26,26,0.96);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);height:70px;overflow:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.8rem 3rem;background:rgba(26,26,26,0.96);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);height:70px;overflow:visible;}
 .nav-logo img{height:100px;width:auto;display:block;}
-.nav-links{display:flex;gap:1.6rem;list-style:none;}
+.nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center;}
 .nav-links a{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .3s;}
 .nav-links a:hover{color:#fff;}
-.nav-cta{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:#000;background:#fff;border:0.5px solid #fff;padding:.65rem 1.6rem;text-decoration:none;transition:all .3s;}
+.nav-cta{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:#000;background:#fff;border:0.5px solid #fff;padding:.65rem 1.6rem;text-decoration:none;transition:all .3s;white-space:nowrap;cursor:pointer;}
 .nav-cta:hover{background:transparent;color:#fff;}
 
 /* HERO */
@@ -193,9 +193,14 @@ footer{background:var(--bg);border-top:.5px solid var(--border);padding:3.5rem 3
 }
 
 /* HAMBURGER */
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:101;position:relative;}
 .hamburger span{display:block;width:22px;height:1px;background:#fff;transition:all .3s;}
-@media(max-width:768px){.hamburger{display:flex;}.nav-links{display:none !important;}}
+@media(max-width:768px){
+  nav{padding:.8rem 1.5rem;}
+  .hamburger{display:flex;}
+  .nav-links{display:none !important;}
+  .nav-cta{display:none;}
+}
 
 /* NAV MORE DROPDOWN */
 .nav-more{position:relative;}
@@ -209,8 +214,9 @@ footer{background:var(--bg);border-top:.5px solid var(--border);padding:3.5rem 3
 .page{display:none;}
 .page.active{display:block;}
 #page-home{display:block;}
+
+@media(max-width:768px){
   nav{padding:1rem 1.5rem;}
-  .nav-links{display:none;}
   section,#signature,#services,#sasy,#masterclass,#membership,#booking{padding:4rem 1.5rem;}
   .svc-row{grid-template-columns:1fr;}
   .svc-left{border-right:none;border-bottom:.5px solid var(--border);padding:2rem 1.5rem;}
@@ -251,7 +257,7 @@ footer{background:var(--bg);border-top:.5px solid var(--border);padding:3.5rem 3
 </nav>
 
 <!-- MOBILE OVERLAY -->
-<div id="mobile-overlay" style="display:none;position:fixed;inset:0;background:rgba(26,26,26,0.98);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;">
+<div id="mobile-overlay" style="display:none;position:fixed;inset:0;background:rgba(26,26,26,0.98);z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;">
   <button onclick="toggleMobile()" style="position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;">&#10005;</button>
   <a href="#" onclick="showPage('home');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Home</a>
   <a href="#" onclick="showPage('services');toggleMobile();return false;" style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:#fff;text-decoration:none;">Services</a>
@@ -1033,7 +1039,11 @@ function toggleMore2(){
 function toggleMobile(){
   var overlay = document.getElementById('mobile-overlay');
   if(overlay){
-    overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
+    if(overlay.style.display === 'flex'){
+      overlay.style.display = 'none';
+    } else {
+      overlay.style.display = 'flex';
+    }
   }
 }
 }
