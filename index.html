@@ -1423,7 +1423,7 @@ window.addEventListener('DOMContentLoaded', function() {
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--muted);margin-top:1rem;line-height:1.8;max-width:540px;margin-left:auto;margin-right:auto;">Bibi's beauty knowledge — distilled into guides you can keep, reference, and share. From everyday glam to professional techniques.</p>
     </div>
 
-    <!-- GUIDE 1 — Free -->
+    <!-- GUIDE 1 — Free Download -->
     <div style="border:.5px solid var(--border);margin-bottom:1px;background:rgba(255,255,255,.02);">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
         <div style="padding:3rem;border-right:.5px solid var(--border);display:flex;flex-direction:column;justify-content:center;gap:1.2rem;">
@@ -1431,28 +1431,35 @@ window.addEventListener('DOMContentLoaded', function() {
             <span style="font-size:.5rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);">Free Download</span>
             <span style="font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;color:#000;background:#fff;padding:.25rem .7rem;">Free</span>
           </div>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:#fff;line-height:1.2;">The Bibisglambar<br><em>Glam Guide</em></h3>
-          <p style="font-size:.78rem;color:var(--dim);line-height:1.85;">The ultimate beauty tips, tricks and hacks guide — curated by Bibi. Everything you need to elevate your everyday glam from the comfort of your own home.</p>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:#fff;line-height:1.2;">The Ultimate<br><em>Beauty Guide</em></h3>
+          <p style="font-size:.72rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;">7 Makeup Mistakes That Are Secretly Ruining Your Glam — And How To Fix Them</p>
+          <p style="font-size:.78rem;color:var(--dim);line-height:1.85;">Bibi reveals the 7 most common makeup mistakes she sees every day — and exactly how to fix them. Whether you do your own glam or just want to look more polished, this guide is your starting point.</p>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem;">
-            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;Everyday glam tips for every skin tone</li>
-            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;Product recommendations and dupes</li>
-            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;Skincare prep for a flawless base</li>
-            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;Bibi's go-to beauty hacks</li>
+            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;11 pages of expert beauty knowledge</li>
+            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;Common mistakes and how to correct them</li>
+            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;Tips that work for every skin tone</li>
+            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;Written by Bibi from 10+ years experience</li>
           </ul>
-          <form name="glam-guide-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="glam-guide-form" onsubmit="handleGuideWaitlist(event,'glam-guide-form','glam-guide-success')" style="display:flex;flex-direction:column;gap:.7rem;max-width:360px;margin-top:.5rem;">
+          <form name="glam-guide-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="glam-guide-form" onsubmit="handleUltimateGuide(event)" style="display:flex;flex-direction:column;gap:.7rem;max-width:360px;margin-top:.5rem;">
             <input type="hidden" name="form-name" value="glam-guide-waitlist"/>
             <p style="display:none;"><input name="bot-field"/></p>
-            <input type="email" name="email" placeholder="Enter your email for early access" required style="background:var(--bg2);border:.5px solid var(--border);color:#fff;padding:.9rem 1.2rem;font-family:var(--fb);font-size:.75rem;outline:none;"/>
-            <button type="submit" class="btn-w" style="cursor:pointer;font-family:var(--fb);">Notify Me at Launch ✦</button>
+            <input type="email" name="email" placeholder="Enter your email to get free access" required style="background:var(--bg2);border:.5px solid var(--border);color:#fff;padding:.9rem 1.2rem;font-family:var(--fb);font-size:.75rem;outline:none;"/>
+            <button type="submit" class="btn-w" style="cursor:pointer;font-family:var(--fb);">Send Me the Guide ✦</button>
           </form>
-          <div id="glam-guide-success" style="display:none;">
-            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:#fff;">You're on the list.</p>
-            <p style="font-size:.7rem;color:var(--muted);margin-top:.4rem;">We'll send your free guide the moment it launches.</p>
+          <div id="glam-guide-success" style="display:none;padding:1rem 0;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:#fff;margin-bottom:.8rem;">Your guide is ready.</p>
+            <a href="https://res.cloudinary.com/dyjr1vtmv/image/upload/bibisglam_beauty_guide_nbay8x.pdf" target="_blank" rel="noopener" class="btn-w" style="display:inline-block;text-decoration:none;font-family:var(--fb);font-size:.6rem;letter-spacing:.22em;">Download Now ↓</a>
           </div>
         </div>
-        <div style="background:var(--bg2);min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;padding:2rem;text-align:center;">
-          <p style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-style:italic;color:rgba(255,255,255,.08);line-height:1;">Glam<br>Guide</p>
-          <p style="font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.2);">Cover coming soon</p>
+        <div style="background:var(--bg2);min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;border-left:.5px solid var(--border);">
+          <div style="border:.5px solid var(--border);padding:2rem;max-width:220px;width:100%;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.2rem;color:#fff;line-height:1.1;margin-bottom:.5rem;">The Ultimate</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.2rem;color:#fff;line-height:1.1;margin-bottom:.5rem;">Beauty</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.2rem;color:#fff;line-height:1.1;margin-bottom:1.2rem;">Guide.</p>
+            <div style="width:40px;height:.5px;background:rgba(255,255,255,.3);margin:0 auto 1rem;"></div>
+            <p style="font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);line-height:1.6;">7 Makeup Mistakes That Are Secretly Ruining Your Glam</p>
+            <p style="font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:1rem;">bibisglambar.com</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1687,6 +1694,22 @@ window.onload = function() {
   var home = document.getElementById('page-home');
   if (home) home.style.display = 'block';
 };
+
+function handleUltimateGuide(e) {
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(data).toString()
+  }).then(function() {
+    document.getElementById('glam-guide-form').style.display = 'none';
+    document.getElementById('glam-guide-success').style.display = 'block';
+  }).catch(function() {
+    alert('Something went wrong. Please try again.');
+  });
+}
 
 function handleGuideWaitlist(e, formId, successId) {
   e.preventDefault();
