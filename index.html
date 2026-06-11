@@ -563,12 +563,12 @@ window.addEventListener('DOMContentLoaded', function() {
       <span class="eyebrow" style="display:block;margin-bottom:1.2rem;">Meet The Artist</span>
       <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.15;margin-bottom:1.8rem;">The Woman <em style="font-style:italic;color:var(--muted);">Behind the Glam</em></h2>
       <div style="width:40px;height:.5px;background:rgba(255,255,255,.25);margin-bottom:2rem;"></div>
-      <p style="font-size:.82rem;color:var(--muted);line-height:1.95;margin-bottom:1.4rem;">Bibi's love affair with beauty began in Lagos, Nigeria — using her younger sister as her very first model, doing her hair, her makeup, and even making her clothes. What started as pure joy became a calling.</p>
-      <p style="font-size:.82rem;color:var(--muted);line-height:1.95;margin-bottom:1.4rem;">Since 2013, Bibi has been perfecting her craft — self-taught, experience-driven, and deeply intentional in every look she creates. Formerly known as Haminahk and HMK Services LLC, her journey led her to Atlanta, Georgia, where Bibisglambar was born from one simple belief: every woman deserves to feel confident, seen, and beautiful in her own skin.</p>
-      <p style="font-size:.82rem;color:var(--muted);line-height:1.95;margin-bottom:2rem;">Her signature Timeless Soft Glam — rooted in minimal or no-foundation technique — is built on one priority: you should always look like yourself, only elevated. Not transformed. Not masked. Simply, undeniably you.</p>
+      <p style="font-size:.82rem;color:var(--muted);line-height:1.95;margin-bottom:1.4rem;">Bibi's love affair with beauty began in Lagos, Nigeria. Using her younger sister as her very first model, doing her hair, her makeup, and even making her clothes. What started as pure joy became a calling.</p>
+      <p style="font-size:.82rem;color:var(--muted);line-height:1.95;margin-bottom:1.4rem;">Since 2013, Bibi has been perfecting her craft. Self-taught, experience-driven, and deeply intentional in every look she creates. Formerly known as Haminahk and HMK Services LLC, her journey led her to Atlanta, Georgia, where Bibisglambar was born from one simple belief: every woman deserves to feel confident, seen, and beautiful in her own skin.</p>
+      <p style="font-size:.82rem;color:var(--muted);line-height:1.95;margin-bottom:2rem;">Her signature Timeless Soft Glam is rooted in a minimal or no-foundation technique, built on one priority: you should always look like yourself, only elevated. Not transformed. Not masked. Simply, undeniably you.</p>
       <div style="border-left:.5px solid rgba(255,255,255,.2);padding-left:1.5rem;margin-bottom:2rem;">
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:#fff;line-height:1.8;">"I want every woman who sits in my chair to leave feeling confident, safe, and entirely satisfied — still looking like herself, just even more beautiful than she already is."</p>
-        <p style="font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-top:.8rem;">— Bibi, Founder</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:#fff;line-height:1.8;">"I want every woman who sits in my chair to leave feeling confident, safe, and entirely satisfied. Still looking like herself, just even more beautiful than she already is."</p>
+        <p style="font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-top:.8rem;">Bibi, Founder</p>
       </div>
       <div style="display:flex;gap:2rem;flex-wrap:wrap;">
         <div>
@@ -587,6 +587,19 @@ window.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </section>
+
+<style>
+@media(max-width:768px){
+  #about > div {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  #about > div > div:first-child img {
+    aspect-ratio: 4/3 !important;
+    object-position: center 20% !important;
+  }
+}
+</style>
 
 </div>
 <div id="page-services" class="page">
