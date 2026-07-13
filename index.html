@@ -1492,11 +1492,43 @@ window.addEventListener('DOMContentLoaded', function() {
     </div>
 
 
+    <!-- GUIDE 3 — Free -->
+    <div style="border:.5px solid var(--border);margin-bottom:1px;background:rgba(255,255,255,.02);">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+        <div style="padding:3rem;border-right:.5px solid var(--border);display:flex;flex-direction:column;justify-content:center;gap:1.2rem;">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="font-size:.5rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);">Free Download</span>
+            <span style="font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;color:#000;background:#fff;padding:.25rem .7rem;">Free</span>
+          </div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:#fff;line-height:1.2;">The Beginner's Guide<br><em>to Makeup Brushes</em></h3>
+          <p style="font-size:.72rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;">Everything You Need to Know Before Building Your Makeup Kit</p>
+          <p style="font-size:.78rem;color:var(--dim);line-height:1.85;">Stop guessing which brush does what. Bibi breaks down every essential brush — what it does, how to use it, and how to keep it clean. Build your kit with confidence from day one.</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem;">
+            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;7 essential brushes every beginner needs</li>
+            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;Step by step application techniques</li>
+            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;Pro tips and common mistakes to avoid</li>
+            <li style="font-size:.72rem;color:var(--muted);">✦ &nbsp;How to clean and care for your brushes</li>
+          </ul>
+          <form name="brushes-guide-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="brushes-guide-form" onsubmit="handleBrushesGuide(event)" style="display:flex;flex-direction:column;gap:.7rem;max-width:360px;margin-top:.5rem;">
+            <input type="hidden" name="form-name" value="brushes-guide-waitlist"/>
+            <p style="display:none;"><input name="bot-field"/></p>
+            <input type="email" name="email" placeholder="Enter your email to get free access" required style="background:var(--bg2);border:.5px solid var(--border);color:#fff;padding:.9rem 1.2rem;font-family:var(--fb);font-size:.75rem;outline:none;"/>
+            <button type="submit" class="btn-w" style="cursor:pointer;font-family:var(--fb);">Send Me the Guide ✦</button>
+          </form>
+          <div id="brushes-guide-success" style="display:none;padding:1rem 0;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:#fff;margin-bottom:.8rem;">Your guide is ready.</p>
+            <a href="/The Beginners Guide To Makeup Brushes.pdf" target="_blank" rel="noopener" class="btn-w" style="display:inline-block;text-decoration:none;font-family:var(--fb);font-size:.6rem;letter-spacing:.22em;">Download Now ↓</a>
+          </div>
+        </div>
+        <div style="background:var(--bg2);min-height:360px;display:flex;overflow:hidden;border-left:.5px solid var(--border);">
+          <img src="https://res.cloudinary.com/dyjr1vtmv/image/upload/f_auto,q_auto/v1783942266/WhatsApp_Image_2026-06-16_at_7.15.50_AM_e0z888.jpg" alt="The Beginner's Guide to Makeup Brushes" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" onerror="this.parentElement.style.background='var(--bg2)'"/>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 </div>
-
-<!-- BLOG PAGE -->
 <div id="page-blog" class="page">
 <section style="padding:7rem 3rem;background:var(--bg);min-height:80vh;">
   <div style="max-width:860px;margin:0 auto;">
@@ -1687,6 +1719,22 @@ window.onload = function() {
   var home = document.getElementById('page-home');
   if (home) home.style.display = 'block';
 };
+
+function handleBrushesGuide(e) {
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(data).toString()
+  }).then(function() {
+    document.getElementById('brushes-guide-form').style.display = 'none';
+    document.getElementById('brushes-guide-success').style.display = 'block';
+  }).catch(function() {
+    alert('Something went wrong. Please try again.');
+  });
+}
 
 function handleUltimateGuide(e) {
   e.preventDefault();
