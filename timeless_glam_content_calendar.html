@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timeless Glam Masterclass — Content Calendar</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #111;
+    background: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 32px 100px;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  /* ─── Header ─── */
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: 44px;
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 28px;
+  }
+
+  .event-deets {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #555;
+  }
+  .event-deets span strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: #111;
+    margin-top: 2px;
+  }
+
+  /* ─── Progress rail ─── */
+  .rail {
+    display: flex;
+    align-items: center;
+    margin: 40px 0 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .rail::-webkit-scrollbar { height: 4px; }
+  .rail::-webkit-scrollbar-thumb { background: #ddd; }
+
+  .tab {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    user-select: none;
+  }
+  .tab .tab-week {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: #bbb;
+    transition: color 0.2s ease;
+  }
+  .tab .tab-phase {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ccc;
+    white-space: nowrap;
+    margin-top: 2px;
+    transition: color 0.2s ease;
+  }
+  .tab.active { border-bottom: 2px solid #111; }
+  .tab.active .tab-week { color: #111; }
+  .tab.active .tab-phase { color: #555; }
+  .tab:hover .tab-week { color: #555; }
+
+  /* ─── Panel ─── */
+  .panel {
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid #eee;
+  }
+
+  .panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .panel-week-label {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #999;
+  }
+  .panel-dates {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+  }
+  .panel-phase {
+    font-size: 32px;
+    font-style: italic;
+    margin: 4px 0 28px;
+  }
+
+  .items {
+    list-style: none;
+  }
+  .item {
+    display: flex;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .item:last-child { border-bottom: none; }
+
+  .badge {
+    flex: 0 0 auto;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #fff;
+    background: #111;
+    padding: 5px 10px;
+    height: fit-content;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .badge.note { background: #eee; color: #999; }
+  .badge.daily { background: #555; }
+
+  .item-text { font-size: 14.5px; color: #222; line-height: 1.6; }
+  .item-text em { font-style: italic; color: #555; }
+
+  /* ─── Caption card ─── */
+  .caption-card {
+    margin-top: 32px;
+    padding: 28px 32px;
+    background: #f7f7f7;
+    border-left: 2px solid #111;
+  }
+  .caption-label {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 10px;
+  }
+  .caption-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.55;
+    color: #111;
+  }
+
+  /* ─── Nav arrows ─── */
+  .panel-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .panel-nav button {
+    background: none;
+    border: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #111;
+    cursor: pointer;
+    padding: 8px 0;
+    border-bottom: 1px solid #111;
+  }
+  .panel-nav button:disabled {
+    color: #ccc;
+    border-bottom-color: #ccc;
+    cursor: default;
+  }
+
+  /* ─── Key principles ─── */
+  .principles {
+    margin-top: 64px;
+    padding: 28px 32px;
+    background: #111;
+    color: #fff;
+  }
+  .principles .caption-label { color: #888; }
+  .principles p {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: #ddd;
+  }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 32px; }
+    .panel-phase { font-size: 26px; }
+    .event-deets { gap: 20px 28px; font-size: 10px; }
+    .item { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Bibisglam Bar</div>
+  <h1>Timeless Glam Masterclass</h1>
+  <div class="subtitle">10-Week Content Calendar</div>
+  <div class="event-deets">
+    <span>Event<strong>Timeless Glam Masterclass</strong></span>
+    <span>Date<strong>November 7, 2026</strong></span>
+    <span>Location<strong>Atlanta, GA</strong></span>
+    <span>Capacity<strong>20 Seats</strong></span>
+  </div>
+</header>
+
+<nav class="rail" id="rail"></nav>
+
+<section class="panel" id="panel"></section>
+
+<div class="principles">
+  <div class="caption-label">Key Principles</div>
+  <p>The content strategy follows an intentional arc from teasing intrigue to building authority to narrowing focus to scarcity and urgency. Visuals should feel elevated and editorial throughout, never engagement-baiting or discount-driven. Bibi's voice and content pillars are the throughline that ties each phase together.</p>
+</div>
+
+<script>
+const weeks = [
+  {
+    n: 10, dates: "Aug 28 – Sep 3", phase: "Planning",
+    items: [
+      { b: "Internal", t: "Finalize event details, curriculum, promotion timeline." },
+      { b: "Design", t: "Design announcement graphics, teasers, email templates." },
+      { b: "Website", t: "Build masterclass landing page, email capture form." },
+      { b: "Note", note: true, t: "No public posts yet." }
+    ]
+  },
+  {
+    n: 9, dates: "Sep 4 – 10", phase: "Soft Tease",
+    items: [
+      { b: "IG Stories", t: "Cryptic Stories: “Something is coming. November 7th.”" },
+      { b: "Reel", t: "“What if you could learn to do this yourself?”" },
+      { b: "Website", t: "Add “Masterclass – Coming Soon” email capture to site." },
+      { b: "Note", note: true, t: "No event details yet, only hints." }
+    ],
+    caption: "Ten years in the chair. Thousands of women. One technique. The Bibisglam Bar Timeless Glam Masterclass. November 7th, Atlanta. Something you've never seen before."
+  },
+  {
+    n: 8, dates: "Sep 11 – 17", phase: "Announce",
+    items: [
+      { b: "Post", t: "Official announcement post with name, date, and tiers." },
+      { b: "Reel", t: "Talking-head Reel: “I've taught women for 10 years…”" },
+      { b: "Offer", t: "Open early-bird window ($167 Tier 1 for 7 days or 5 seats)." },
+      { b: "Email", t: "Email waitlist with early access & full-price Tiers 2–3." }
+    ],
+    caption: "I've taught women for ten years how to master their face. Now I'm opening the room to twenty of you. The Bibisglam Bar Timeless Glam Masterclass. Learn my exact technique, the one I use on every client. One afternoon. One artist. The education that changes how you see yourself."
+  },
+  {
+    n: 7, dates: "Sep 18 – 24", phase: "Early-Bird",
+    items: [
+      { b: "Announcement", t: "Close early-bird, announce regular pricing is now standard." },
+      { b: "Post / Story", t: "Share sneak peeks: kit contents, guide, venue space." },
+      { b: "IG Stories", daily: true, t: "Countdown to the early-bird deadline day." },
+      { b: "Note", note: true, t: "No discounts or extensions after the window closes." }
+    ]
+  },
+  {
+    n: 6, dates: "Sep 25 – Oct 1", phase: "Build Credibility",
+    items: [
+      { b: "BTS Content", t: "Behind-the-scenes prep content: guide, kits, model." },
+      { b: "Reel", t: "Founder's Story: “Why I created this masterclass.”" },
+      { b: "Testimonials", t: "Testimonials / quotes from past clients if available." },
+      { b: "IG Stories", t: "Seat update (“12 of 20 seats filled”) if on track." }
+    ]
+  },
+  {
+    n: 5, dates: "Oct 2 – 8", phase: "Authority Content",
+    items: [
+      { b: "Post", t: "Educational posts that tease the curriculum." },
+      { b: "Carousel", t: "“3 signs your makeup routine isn't working.”" },
+      { b: "Reel", t: "“The one thing most women get wrong about X.”" },
+      { b: "Note", note: true, t: "All content ties back to “we cover this in the masterclass.”" }
+    ]
+  },
+  {
+    n: 4, dates: "Oct 9 – 15", phase: "FOMO Building",
+    items: [
+      { b: "Post", t: "Full kit reveal post: why each item was chosen." },
+      { b: "Announcement", t: "Announce Tier 3 sold out to push Tier 2 upgrades." },
+      { b: "Reel / Carousel", t: "Unboxing-style content of kit contents." },
+      { b: "Post", t: "Lifestyle / venue content to evoke the live experience." }
+    ],
+    caption: "This is what Tier 2 and 3 attendees will take home. The exact products I use during the masterclass. Because learning the technique is only half of it. Having the tools to practice is the other half. Limited seats remain at the link in bio."
+  },
+  {
+    n: 3, dates: "Oct 16 – 22", phase: "Urgency",
+    items: [
+      { b: "Post", t: "Narrow focus to scarcity: “Only X seats left.”" },
+      { b: "Post", t: "Comparison to offline: “This is the only masterclass in 2026.”" },
+      { b: "Reel", t: "Teasing the live experience & what they'll miss." },
+      { b: "Email", t: "Full list send: “Seats remaining for Timeless Glam.”" }
+    ]
+  },
+  {
+    n: 2, dates: "Oct 23 – 29", phase: "Last Call",
+    items: [
+      { b: "IG Stories", daily: true, t: "Daily countdown: “X seats left” (if true)." },
+      { b: "Reel", t: "Talking-head: “If you've been thinking about it…”" },
+      { b: "Email", t: "Final email: “The room is almost full,” clear CTA." },
+      { b: "Note", note: true, t: "Stop posting when sold out or after Oct 29." }
+    ],
+    caption: "20 seats. That's the whole room. The Bibisglam Bar Timeless Glam Masterclass. November 7th. The technique behind every look you've seen here. Taught by me, to you, in one afternoon. Last seats at the link in bio."
+  },
+  {
+    n: 1, dates: "Oct 30 – Nov 6", phase: "Event Week",
+    items: [
+      { b: "Announcement", t: "If sold out: announce it (“Sold out. Thank you.”)." },
+      { b: "Email", t: "Send pre-event email to attendees with final details." },
+      { b: "IG Story", t: "Event setup / prep content for anticipation." },
+      { b: "Note", note: true, t: "Make attendees feel special, build exclusivity." }
+    ]
+  }
+];
+
+const order = [...weeks].sort((a, b) => b.n - a.n); // Week 10 -> Week 1, chronological
+let activeIndex = 0;
+
+const rail = document.getElementById('rail');
+const panel = document.getElementById('panel');
+
+function renderRail() {
+  rail.innerHTML = '';
+  order.forEach((w, i) => {
+    const tab = document.createElement('div');
+    tab.className = 'tab' + (i === activeIndex ? ' active' : '');
+    tab.innerHTML = `<div class="tab-week">Week ${w.n}</div><div class="tab-phase">${w.phase}</div>`;
+    tab.addEventListener('click', () => { activeIndex = i; render(); });
+    rail.appendChild(tab);
+  });
+}
+
+function renderPanel() {
+  const w = order[activeIndex];
+  let itemsHtml = w.items.map(it => `
+    <li class="item">
+      <span class="badge${it.note ? ' note' : ''}${it.daily ? ' daily' : ''}">${it.b}${it.daily ? ' · Daily' : ''}</span>
+      <span class="item-text">${it.t}</span>
+    </li>`).join('');
+
+  let captionHtml = w.caption ? `
+    <div class="caption-card">
+      <div class="caption-label">Example Caption — ${w.phase}</div>
+      <div class="caption-text">${w.caption}</div>
+    </div>` : '';
+
+  panel.innerHTML = `
+    <div class="panel-head">
+      <div class="panel-week-label">Week ${w.n} of 10</div>
+      <div class="panel-dates">${w.dates}</div>
+    </div>
+    <div class="panel-phase">${w.phase}</div>
+    <ul class="items">${itemsHtml}</ul>
+    ${captionHtml}
+    <div class="panel-nav">
+      <button id="prevBtn" ${activeIndex === 0 ? 'disabled' : ''}>&larr; Previous Week</button>
+      <button id="nextBtn" ${activeIndex === order.length - 1 ? 'disabled' : ''}>Next Week &rarr;</button>
+    </div>
+  `;
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    if (activeIndex > 0) { activeIndex--; render(); }
+  });
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    if (activeIndex < order.length - 1) { activeIndex++; render(); }
+  });
+}
+
+function render() {
+  renderRail();
+  renderPanel();
+  const activeTab = rail.querySelector('.tab.active');
+  if (activeTab) activeTab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+}
+
+render();
+</script>
+
+</body>
+</html>
