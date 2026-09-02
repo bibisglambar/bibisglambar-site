@@ -100,6 +100,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .mc-cta{margin-top:4rem;text-align:center;border:.5px solid var(--border);padding:3.5rem 2rem;}
 .mc-cta-title{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;font-style:italic;color:#fff;margin-bottom:.8rem;}
 .mc-cta-sub{font-size:.75rem;color:var(--muted);margin-bottom:2rem;}
+.mc-meta{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-top:1.8rem;}
+.mc-meta span{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+.mc-meta span strong{display:block;color:#fff;font-family:var(--fd);font-size:1.05rem;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;margin-bottom:.3rem;}
+.mc-tier-intro{margin-top:5rem;text-align:center;}
+.mc-tier-intro h3{font-family:var(--fd);font-size:clamp(1.4rem,2.8vw,1.9rem);font-weight:300;font-style:italic;color:#fff;margin-bottom:.6rem;}
+.mc-tier-intro p{font-size:.78rem;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.85;}
+.mc-tier-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);margin-top:2.5rem;}
+.mc-tier{background:var(--bg);padding:2.6rem 2rem;display:flex;flex-direction:column;}
+.mc-tier.featured{background:var(--bg3);}
+.mc-tier-label{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);margin-bottom:.6rem;}
+.mc-tier-name{font-family:var(--fd);font-size:1.5rem;font-style:italic;font-weight:400;color:#fff;margin-bottom:.4rem;}
+.mc-tier-price{font-family:var(--fd);font-size:2.4rem;font-weight:300;color:#fff;line-height:1;margin-bottom:.3rem;}
+.mc-tier-price .mc-strike{font-size:1.1rem;color:var(--dim);text-decoration:line-through;margin-right:.5rem;}
+.mc-tier-early{font-size:.62rem;letter-spacing:.08em;color:var(--muted);margin-bottom:1.4rem;}
+.mc-tier-list{list-style:none;font-size:.74rem;color:var(--muted);line-height:1.9;flex:1;margin-bottom:1.6rem;}
+.mc-tier-list li{padding:.4rem 0;border-bottom:.5px solid var(--faint);}
+.mc-tier-list li:last-child{border-bottom:none;}
+.mc-tier-seats{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:1.2rem;}
+@media(max-width:900px){.mc-tier-grid{grid-template-columns:1fr;}.mc-meta{gap:1.5rem;}}
 
 /* MEMBERSHIP */
 #membership{padding:7rem 3rem;background:var(--bg2);border-bottom:.5px solid var(--border);}
@@ -243,6 +262,14 @@ var bkFeeData = {
   'Makeup & In-Studio Photoshoot':             { label: 'Makeup & Photoshoot — $100 Reservation Fee',  url: 'https://square.link/u/sbkavreF' },
   'Bridal Glam Consultation':                  { label: 'Bridal Glam Consultation Fee',                url: 'https://square.link/u/m39PUIWt' },
   'Timeless Glam Masterclass':                 null
+};
+
+// Timeless Glam Masterclass — Square checkout links
+// TODO: replace these placeholder URLs with your real Square payment links for each tier
+var mcTierLinks = {
+  signature: 'https://square.link/u/REPLACE_SIGNATURE',
+  atelier:   'https://square.link/u/REPLACE_ATELIER',
+  bespoke:   'https://square.link/u/REPLACE_BESPOKE'
 };
 
 function bkPickSvc(el) {
@@ -413,6 +440,7 @@ window.addEventListener('DOMContentLoaded', function() {
     <li class="nav-more">
       <a href="#" onclick="toggleMore(event)">More &#9662;</a>
       <ul class="nav-more-menu" id="nav-more-menu">
+        <li><a href="#" onclick="showPage('masterclass-page');toggleMore2();return false;">Timeless Glam Masterclass</a></li>
         <li><a href="#" onclick="showPage('launching');return false;">Launching Soon</a></li>
 <li><a href="#" onclick="showPage('sasy');toggleMore2();return false;">Sasy Couture</a></li>
         <li><a href="#" onclick="showPage('resources');toggleMore2();return false;">Resources</a></li>
@@ -871,11 +899,16 @@ window.addEventListener('DOMContentLoaded', function() {
       <span class="eyebrow">Education</span>
       <h2 class="sec-title">Timeless Glam<br><em>Masterclass</em></h2>
     </div>
+    <div class="mc-meta">
+      <span><strong>November 7, 2026</strong>Date</span>
+      <span><strong>In-Person &amp; Live Online</strong>Format</span>
+      <span><strong>20 In-Person + Unlimited Online</strong>Capacity</span>
+    </div>
     <div class="mc-grid">
       <div class="mc-card">
         <div class="mc-icon">✦ &nbsp;What You'll Learn</div>
-        <h4 class="mc-card-title">The Timeless Soft Glam</h4>
-        <p class="mc-card-body">Master Bibisglambar's signature look from start to finish. Learn skin prep, foundation application, sculpting, soft eye artistry, and the finishing techniques that make this look iconic.</p>
+        <h4 class="mc-card-title">The Signature Timeless Glam Look</h4>
+        <p class="mc-card-body">Master Bibisglambar's signature Timeless Soft Glam from start to finish — the same look Bibi builds for her bridal and editorial clients. Skin prep, foundation, sculpting, soft eye artistry, lashes, and the finishing techniques that make this look iconic.</p>
       </div>
       <div class="mc-card">
         <div class="mc-icon">✦ &nbsp;Who It's For</div>
@@ -885,18 +918,23 @@ window.addEventListener('DOMContentLoaded', function() {
       <div class="mc-card">
         <div class="mc-icon">✦ &nbsp;What's Included</div>
         <h4 class="mc-card-title">A Full Experience</h4>
-        <p class="mc-card-body">Live demonstration, hands-on practice, product recommendations, personalised feedback, and a digital lookbook to take home. Small group sizes ensure every attendee gets direct attention.</p>
+        <p class="mc-card-body">Live demonstration, hands-on practice, personalised feedback, and a digital Timeless Glam Guide to take home. Small in-person group size ensures every attendee gets direct attention — plus a livestream for anyone joining from anywhere.</p>
       </div>
       <div class="mc-card">
         <div class="mc-icon">✦ &nbsp;Format</div>
-        <h4 class="mc-card-title">In-Person & Private</h4>
-        <p class="mc-card-body">Available as a group masterclass or private one-on-one session. Corporate and bridal party bookings are also available. Contact us to discuss custom workshop arrangements.</p>
+        <h4 class="mc-card-title">Three Ways In</h4>
+        <p class="mc-card-body">Watch live online, practice hands-on in the room, or be personally transformed at the Bespoke Table. Corporate and bridal party bookings are also available — contact us to discuss custom workshop arrangements.</p>
       </div>
     </div>
+
+    <div class="mc-tier-intro">
+      <h3>Watch, Practice, or Be Transformed</h3>
+      <p>Three ways to experience the afternoon, from a livestreamed seat to a personal one-on-one with Bibi. See full pricing and reserve your spot.</p>
+    </div>
     <div class="mc-cta">
-      <h3 class="mc-cta-title">Ready to learn the art of Timeless Soft Glam?</h3>
-      <p class="mc-cta-sub">Spaces are limited. Book your seat today.</p>
-      <a class="btn-w" href="#booking">Reserve Your Spot</a>
+      <h3 class="mc-cta-title">Ready to learn The Timeless Glam Look?</h3>
+      <p class="mc-cta-sub">November 7, 2026 — spaces are limited. Book your seat today.</p>
+      <a class="btn-w" href="#" onclick="showPage('masterclass-page');return false;">See Tiers &amp; Reserve Your Spot</a>
     </div>
   </div>
 </section>
@@ -1235,24 +1273,14 @@ window.addEventListener('DOMContentLoaded', function() {
     <div style="border:.5px solid var(--border);border-top:none;background:rgba(255,255,255,.02);padding:3.5rem 3rem;">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:3rem;flex-wrap:wrap;">
         <div style="flex:1;min-width:280px;">
-          <span style="font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:1rem;">✦ &nbsp;Education Launch</span>
+          <span style="font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:1rem;">✦ &nbsp;Now Booking</span>
           <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#fff;line-height:1.2;margin-bottom:1rem;">Timeless Glam<br><em style="font-style:italic;">Masterclass</em></h3>
           <p style="font-size:.82rem;color:var(--muted);line-height:1.95;margin-bottom:1.5rem;">Master Bibisglambar's signature Timeless Soft Glam from start to finish. Whether you're a beginner or a professional, this masterclass meets you where you are and takes you further.</p>
-          <p style="font-size:.75rem;color:var(--dim);line-height:1.85;margin-bottom:2rem;">Offered at a flat rate upon launch. Reserve your spot now and we'll be in touch with all the details.</p>
-          <form name="masterclass-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="mc-waitlist-form" onsubmit="handleMcWaitlist(event)" style="display:flex;flex-direction:column;gap:.8rem;max-width:400px;">
-            <input type="hidden" name="form-name" value="masterclass-waitlist"/>
-            <p style="display:none;"><input name="bot-field"/></p>
-            <input type="text" name="name" placeholder="Your name" required style="background:var(--bg2);border:.5px solid var(--border);color:#fff;padding:.9rem 1.2rem;font-family:var(--fb);font-size:.78rem;outline:none;"/>
-            <input type="email" name="email" placeholder="Your email address" required style="background:var(--bg2);border:.5px solid var(--border);color:#fff;padding:.9rem 1.2rem;font-family:var(--fb);font-size:.78rem;outline:none;"/>
-            <button type="submit" class="btn-w" style="cursor:pointer;font-family:var(--fb);">Reserve My Spot ✦</button>
-          </form>
-          <div id="mc-waitlist-success" style="display:none;padding:1.5rem 0;">
-            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:#fff;">You're reserved.</p>
-            <p style="font-size:.72rem;color:var(--muted);margin-top:.5rem;line-height:1.8;">We'll reach out with full masterclass details closer to launch.</p>
-          </div>
+          <p style="font-size:.75rem;color:var(--dim);line-height:1.85;margin-bottom:2rem;">Three ways in — Signature Seat ($97, online), Atelier Seat ($297 early-bird, in-person), or the Bespoke Table ($597, in-person). See full tier details and reserve your spot below.</p>
+          <a class="btn-w" href="#" onclick="showPage('masterclass-page');return false;" style="display:inline-block;">See Tiers &amp; Reserve ✦</a>
         </div>
         <div style="flex:0 0 200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;border:.5px solid var(--border);background:var(--bg2);text-align:center;">
-          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--muted);">Date &amp; details<br>coming soon</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:#fff;">November 7<br>2026</p>
         </div>
       </div>
     </div>
@@ -1260,6 +1288,100 @@ window.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 </div>
+
+<div id="page-masterclass-page" class="page">
+<section style="padding:7rem 3rem 3rem;background:var(--bg);border-bottom:.5px solid var(--border);text-align:center;">
+  <div style="max-width:760px;margin:0 auto;">
+    <span class="eyebrow">Education · Now Booking</span>
+    <h1 class="sec-title" style="text-align:center;">Timeless Glam<br><em>Masterclass</em></h1>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--muted);max-width:580px;margin:1.5rem auto 0;line-height:1.9;">Master Bibisglambar's signature Timeless Soft Glam from start to finish — the same look Bibi builds for her bridal and editorial clients.</p>
+    <div class="mc-meta">
+      <span><strong>November 7, 2026</strong>Date</span>
+      <span><strong>In-Person &amp; Live Online</strong>Format</span>
+      <span><strong>20 In-Person + Unlimited Online</strong>Capacity</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding:5rem 3rem 7rem;background:var(--bg);">
+  <div style="max-width:1060px;margin:0 auto;">
+    <div class="mc-tier-intro" style="margin-top:0;">
+      <h3>Watch, Practice, or Be Transformed</h3>
+      <p>Three ways to experience the afternoon — choose the tier that fits how close to the chair you want to be.</p>
+    </div>
+    <div class="mc-tier-grid">
+      <div class="mc-tier">
+        <div class="mc-tier-label">Tier 01 — Watch · Online</div>
+        <div class="mc-tier-name">The Signature Seat</div>
+        <div class="mc-tier-price">$97</div>
+        <ul class="mc-tier-list">
+          <li>Live-streamed access to the full demonstration, from wherever you are</li>
+          <li>The Timeless Glam Guide — instant digital download (PDF)</li>
+          <li>Submit questions for the live Q&amp;A</li>
+          <li>Digital replay access (30 days)</li>
+        </ul>
+        <div class="mc-tier-seats">Unlimited — no seat cap</div>
+        <a class="btn-o" href="https://square.link/u/REPLACE_SIGNATURE" target="_blank" rel="noopener">Reserve Online</a>
+      </div>
+      <div class="mc-tier featured">
+        <div class="mc-tier-label">Tier 02 — Practice · In-Person · Most Popular</div>
+        <div class="mc-tier-name">The Atelier Seat</div>
+        <div class="mc-tier-price"><span class="mc-strike">$347</span>$297</div>
+        <div class="mc-tier-early">Early-bird pricing — limited time</div>
+        <ul class="mc-tier-list">
+          <li>Everything in The Signature Seat</li>
+          <li>A guided practice station in the room — build the look yourself as Bibi circulates to correct and coach</li>
+          <li>The Atelier Toolkit — professional brushes &amp; personal mirror, yours to keep</li>
+          <li>Shade &amp; Feature Guide, filled in live</li>
+          <li>Light bites &amp; curated beverages</li>
+          <li>Digital replay access (90 days)</li>
+        </ul>
+        <div class="mc-tier-seats">15 seats available</div>
+        <a class="btn-w" href="https://square.link/u/REPLACE_ATELIER" target="_blank" rel="noopener">Reserve My Seat</a>
+      </div>
+      <div class="mc-tier">
+        <div class="mc-tier-label">Tier 03 — Be Transformed · In-Person</div>
+        <div class="mc-tier-name">The Bespoke Table</div>
+        <div class="mc-tier-price">$597</div>
+        <ul class="mc-tier-list">
+          <li>Everything in The Atelier Seat</li>
+          <li>Bibi personally builds half of your look live, beside your own practiced half</li>
+          <li>A personalized starter set — foundation, concealer &amp; blush matched to you</li>
+          <li>10-minute private consultation with Bibi</li>
+          <li>A professional photo of your finished look, with Bibi</li>
+          <li>$100 credit toward any Bibisglambar booking</li>
+        </ul>
+        <div class="mc-tier-seats">5 seats available</div>
+        <a class="btn-o" href="https://square.link/u/REPLACE_BESPOKE" target="_blank" rel="noopener">Reserve My Table</a>
+      </div>
+    </div>
+
+    <div class="mc-grid" style="margin-top:5rem;">
+      <div class="mc-card">
+        <div class="mc-icon">✦ &nbsp;What You'll Learn</div>
+        <h4 class="mc-card-title">The Signature Timeless Glam Look</h4>
+        <p class="mc-card-body">Skin prep, foundation application, sculpting, soft eye artistry, lashes, and the finishing techniques that make this look iconic.</p>
+      </div>
+      <div class="mc-card">
+        <div class="mc-icon">✦ &nbsp;Who It's For</div>
+        <h4 class="mc-card-title">All Skill Levels Welcome</h4>
+        <p class="mc-card-body">Whether you're a beginner wanting to elevate your personal makeup routine or a professional expanding your technique, this masterclass meets you where you are and takes you further.</p>
+      </div>
+      <div class="mc-card">
+        <div class="mc-icon">✦ &nbsp;What's Included</div>
+        <h4 class="mc-card-title">A Full Experience</h4>
+        <p class="mc-card-body">Live demonstration, personalised feedback, and a digital Timeless Glam Guide to take home. Small in-person group size ensures every attendee gets direct attention.</p>
+      </div>
+      <div class="mc-card">
+        <div class="mc-icon">✦ &nbsp;Questions?</div>
+        <h4 class="mc-card-title">We're Here to Help</h4>
+        <p class="mc-card-body">Corporate and bridal party bookings are also available for a private session. <a href="#" onclick="showPage('contact');return false;" style="color:#fff;text-decoration:underline;">Contact us</a> to discuss custom arrangements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
 <div id="page-booking" class="page">
 <!-- BOOKING -->
 <!-- BOOKING -->
