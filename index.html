@@ -229,6 +229,218 @@ footer{background:var(--bg);border-top:.5px solid var(--border);padding:3.5rem 3
   .form-row{grid-template-columns:1fr;}
   .waitlist-form{flex-direction:column;}
 }
+
+/* ── ANNOUNCEMENT BANNER ── */
+#mc-banner {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  padding: .65rem 2rem;
+  font-family: var(--fb);
+  font-size: .58rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+#mc-banner a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: .5px solid rgba(0,0,0,.4);
+  padding-bottom: 1px;
+  white-space: nowrap;
+  transition: opacity .2s;
+}
+#mc-banner a:hover { opacity: .6; }
+#mc-banner-close {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: .9rem;
+  color: #000;
+  opacity: .4;
+  padding: 0;
+  line-height: 1;
+  transition: opacity .2s;
+}
+#mc-banner-close:hover { opacity: 1; }
+
+/* ── MASTERCLASS MODAL ── */
+#mc-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  backdrop-filter: blur(6px);
+}
+#mc-modal-overlay.open {
+  display: flex;
+}
+#mc-modal {
+  background: #111;
+  border: .5px solid rgba(255,255,255,.15);
+  max-width: 780px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalIn .3s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#mc-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.4);
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 10;
+  transition: color .2s;
+  padding: 0;
+}
+#mc-modal-close:hover { color: #fff; }
+.mc-modal-header {
+  background: #000;
+  padding: 3rem 3rem 2.5rem;
+  text-align: center;
+  border-bottom: .5px solid rgba(255,255,255,.08);
+}
+.mc-modal-eyebrow {
+  font-family: var(--fb);
+  font-size: .5rem;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: .8rem;
+}
+.mc-modal-title {
+  font-family: var(--fd);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: .6rem;
+}
+.mc-modal-title em { font-style: italic; }
+.mc-modal-meta {
+  font-family: var(--fb);
+  font-size: .58rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  margin-top: .8rem;
+}
+.mc-modal-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.08);
+  border-top: .5px solid rgba(255,255,255,.08);
+}
+.mc-modal-tier {
+  background: #111;
+  padding: 1.8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.mc-modal-tier-label {
+  font-family: var(--fb);
+  font-size: .45rem;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+}
+.mc-modal-tier-name {
+  font-family: var(--fd);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.2;
+}
+.mc-modal-tier-price {
+  font-family: var(--fd);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1;
+}
+.mc-modal-tier-price-strike {
+  font-family: var(--fd);
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.3);
+  text-decoration: line-through;
+  margin-right: .3rem;
+}
+.mc-modal-tier-note {
+  font-size: .62rem;
+  color: rgba(255,255,255,.3);
+  line-height: 1.5;
+  flex: 1;
+}
+.mc-modal-tier-btn {
+  display: block;
+  text-align: center;
+  padding: .75rem 1rem;
+  font-family: var(--fb);
+  font-size: .5rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: .5px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.6);
+  margin-top: .4rem;
+  transition: all .2s;
+}
+.mc-modal-tier-btn:hover,
+.mc-modal-tier-btn.featured {
+  background: #fff;
+  border-color: #fff;
+  color: #000;
+}
+.mc-modal-footer {
+  padding: 1.2rem 2rem;
+  text-align: center;
+  border-top: .5px solid rgba(255,255,255,.06);
+}
+.mc-modal-footer a {
+  font-family: var(--fb);
+  font-size: .52rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  text-decoration: none;
+  border-bottom: .5px solid rgba(255,255,255,.15);
+  padding-bottom: 1px;
+  transition: color .2s;
+}
+.mc-modal-footer a:hover { color: #fff; }
+
+@media (max-width: 600px) {
+  .mc-modal-tiers { grid-template-columns: 1fr; }
+  .mc-modal-header { padding: 2.5rem 1.5rem 2rem; }
+  .mc-modal-tier { padding: 1.5rem 1.5rem; }
+}
+
 </style>
 
 <script>
@@ -402,6 +614,54 @@ window.addEventListener('DOMContentLoaded', function() {
 </script>
 </head>
 <body>
+
+<!-- ── ANNOUNCEMENT BANNER ── -->
+<div id="mc-banner">
+  <span>✦ &nbsp;Timeless Glam Masterclass &nbsp;—&nbsp; November 14, 2026 &nbsp;·&nbsp; Snellville, GA&nbsp; ✦</span>
+  <a href="#" onclick="showPage('masterclass');closeBanner();return false;">Reserve Your Seat &rarr;</a>
+  <button id="mc-banner-close" onclick="closeBanner()" aria-label="Close">&times;</button>
+</div>
+
+<!-- ── MASTERCLASS MODAL ── -->
+<div id="mc-modal-overlay" role="dialog" aria-modal="true" aria-label="Timeless Glam Masterclass">
+  <div id="mc-modal">
+    <button id="mc-modal-close" onclick="closeMcModal()" aria-label="Close">&times;</button>
+    <div class="mc-modal-header">
+      <div class="mc-modal-eyebrow">Now Open — Limited Availability</div>
+      <h2 class="mc-modal-title">Timeless Glam<br><em>Masterclass</em></h2>
+      <div class="mc-modal-meta">November 14, 2026 &nbsp;&middot;&nbsp; Snellville, GA &nbsp;&middot;&nbsp; Live Demonstration</div>
+    </div>
+    <div class="mc-modal-tiers">
+      <!-- Signature -->
+      <div class="mc-modal-tier">
+        <div class="mc-modal-tier-label">Signature</div>
+        <div class="mc-modal-tier-name">Signature Seat</div>
+        <div class="mc-modal-tier-price">$97</div>
+        <div class="mc-modal-tier-note">Livestream access + digital guide + 30-day replay</div>
+        <a href="https://square.link/u/7wCTADic" target="_blank" rel="noopener" class="mc-modal-tier-btn">Reserve</a>
+      </div>
+      <!-- Atelier -->
+      <div class="mc-modal-tier">
+        <div class="mc-modal-tier-label">Early Bird</div>
+        <div class="mc-modal-tier-name">Atelier Seat</div>
+        <div class="mc-modal-tier-price"><span class="mc-modal-tier-price-strike">$347</span>$297</div>
+        <div class="mc-modal-tier-note">In-person · printed guide · Q&amp;A · professional photos</div>
+        <a href="https://square.link/u/i5ARDnFz" target="_blank" rel="noopener" class="mc-modal-tier-btn featured">Claim Seat</a>
+      </div>
+      <!-- Bespoke -->
+      <div class="mc-modal-tier">
+        <div class="mc-modal-tier-label">Bespoke</div>
+        <div class="mc-modal-tier-name">Bespoke Table</div>
+        <div class="mc-modal-tier-price">$597</div>
+        <div class="mc-modal-tier-note">In-person + private 20-min consultation with Bibi</div>
+        <a href="https://square.link/u/0NDxcjjq" target="_blank" rel="noopener" class="mc-modal-tier-btn">Reserve</a>
+      </div>
+    </div>
+    <div class="mc-modal-footer">
+      <a href="#" onclick="closeMcModal();showPage('masterclass');return false;">View full masterclass details &rarr;</a>
+    </div>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -1951,6 +2211,52 @@ function handleContactSubmit(e) {
     alert('Something went wrong. Please email us directly at bibisglambar@gmail.com');
   });
 }
+</script>
+<script>
+// ── ANNOUNCEMENT BANNER ──
+function closeBanner() {
+  var b = document.getElementById('mc-banner');
+  if (b) { b.style.display = 'none'; }
+  try { sessionStorage.setItem('mc-banner-closed', '1'); } catch(e) {}
+}
+(function() {
+  try {
+    if (sessionStorage.getItem('mc-banner-closed') === '1') {
+      var b = document.getElementById('mc-banner');
+      if (b) b.style.display = 'none';
+    }
+  } catch(e) {}
+})();
+
+// ── MASTERCLASS MODAL ──
+function openMcModal() {
+  var overlay = document.getElementById('mc-modal-overlay');
+  if (overlay) overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMcModal() {
+  var overlay = document.getElementById('mc-modal-overlay');
+  if (overlay) overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  try { localStorage.setItem('mc-modal-seen', '1'); } catch(e) {}
+}
+// Close on overlay click
+document.addEventListener('DOMContentLoaded', function() {
+  var overlay = document.getElementById('mc-modal-overlay');
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeMcModal();
+    });
+  }
+  // Show modal after 3 seconds — first visit only
+  try {
+    if (!localStorage.getItem('mc-modal-seen')) {
+      setTimeout(openMcModal, 3000);
+    }
+  } catch(e) {
+    setTimeout(openMcModal, 3000);
+  }
+});
 </script>
 </body>
 </html>
